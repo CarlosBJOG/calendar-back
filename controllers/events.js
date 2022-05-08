@@ -75,7 +75,7 @@ const eliminarEvento = async (req, res) => {
         const resp = await Event.findByIdAndDelete( id , { new: true } );
 
         res.status(200).json({
-            msg:"eliminarEvento",
+            ok: true,
             resp
         })
     }catch(e){
@@ -114,7 +114,7 @@ const actualizarEvento = async (req, res) => {
         const enventUpdated = await Event.findByIdAndUpdate( id, newEvent, { new: true });
 
         res.status(200).json({
-            msg:"actualizarEvento",
+            ok:true,
             enventUpdated
         })
     }catch(err){

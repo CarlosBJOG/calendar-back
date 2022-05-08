@@ -8,7 +8,7 @@ const isEmailValid = async ( email ='' ) => {
     //verificar si el correo existe
     const existeEmail = await User.findOne({email});
     if( existeEmail ) {
-        throw new Error(`The mail ${correo} is already registered in the database`);
+        throw new Error(`The mail ${email} is already registered in the database`);
     }      
 }
 

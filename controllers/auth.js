@@ -19,6 +19,7 @@ const createUser = async ( req, res ) => {
         const token = await generarJWT( uid, name );
     
         res.status(201).json({
+            ok: true,
             user,
             token
         })
@@ -45,6 +46,7 @@ const loginUser = async ( req, res ) => {
         const token = await generarJWT( usuario.id, usuario.name );
 
         res.json({
+            ok: true,
             usuario,
             token
         })
@@ -67,6 +69,7 @@ const revalidToken = async ( req, res ) => {
 
 
     res.status(200).json({
+        ok:true,
         uid,
         email,
         name,
